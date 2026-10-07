@@ -70,6 +70,16 @@ const commentsFrameScript = `<script>
     <a href={permalink} title={post.datetime}>
       <time datetime={post.datetime} title={timeago}>{timeago}</time>
     </a>
+    {
+      !isDetail && commentsEnabled && (
+        <>
+          <span class="meta-separator" style="margin: 0 4px;">·</span>
+          <a href={permalink} class="meta-comment-link">
+            💬 评论
+          </a>
+        </>
+      )
+    }
   </p>
   {
     hasReactions && (
